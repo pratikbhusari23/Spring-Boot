@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <bean id= "NormalTyre" class="com.pb.CarDealer.NormalTyre"></bean>
+    <bean id= "SportsTyre" class="com.pb.CarDealer.SportsTyre"></bean>
+    <bean id= "HeavyTyre" class="com.pb.CarDealer.HeavyTyre"></bean>
+
+    <bean id= "NormalCarNormalTyre" class="com.pb.CarDealer.NormalCar">
+        <constructor-arg ref="NormalTyre"></constructor-arg>
+    </bean>
+    <bean id= "NormalCarSportsTyre" class="com.pb.CarDealer.NormalCar">
+        <constructor-arg ref="SportsTyre"></constructor-arg>
+    </bean>
+    <bean id= "NormalCarHeavyTyre" class="com.pb.CarDealer.NormalCar">
+        <constructor-arg ref="HeavyTyre"></constructor-arg>
+    </bean>
+
+    <bean id= "SportsCarNormalTyre" class="com.pb.CarDealer.SportsCar">
+        <constructor-arg ref="NormalTyre"></constructor-arg>
+    </bean>
+    <bean id= "SportsCarSportsTyre" class="com.pb.CarDealer.SportsCar">
+        <constructor-arg ref="SportsTyre"></constructor-arg>
+    </bean>
+    <bean id= "SportsCarHeavyTyre" class="com.pb.CarDealer.SportsCar">
+        <constructor-arg ref="HeavyTyre"></constructor-arg>
+    </bean>
+
+    <bean id= "TruckNormalTyre" class="com.pb.CarDealer.Truck">
+        <constructor-arg ref="NormalTyre"></constructor-arg>
+    </bean>
+    <bean id= "TruckSportsTyre" class="com.pb.CarDealer.Truck">
+        <constructor-arg ref="SportsTyre"></constructor-arg>
+    </bean>
+    <bean id= "TruckHeavyTyre" class="com.pb.CarDealer.Truck">
+        <constructor-arg ref="HeavyTyre"></constructor-arg>
+    </bean>
+
+</beans>

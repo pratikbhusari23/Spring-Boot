@@ -3,14 +3,18 @@ package com.example.Customers;
 
 public interface CustomerCare {
 	
-	String getDepartment();
+	public String getDepartment();
 
-	void getService();
+	public String getService();
+	
+	public void setCustomerName(String name);
+	
+	public void setProblem(String problem); 
+	
+	public String getProblem(); 
 
-	void setCustomerName(String name);
-	
-	void setProblem(String problem); 
-	
-	String getProblem(); 
+	public double getRefId();
+
+	public String getCustomerName();
 
 }

@@ -7,25 +7,15 @@
 		
 		private String department = "Query Department";
 		private String customerName;
-		private String issue;
-		private double refId;
-
-		public QueryDepartment() {
-		}
-
-		public QueryDepartment(String customerName, String issue, double refId) {
-			this.customerName = customerName;
-			this.issue = issue;
-			this.refId = refId;
-		}
+		private String problem;
+		private double refId= Math.random()*100;;
 
 		public String getDepartment() {
 			return department;
 		}
 
-		public void getService() {
-			System.out.println("Your issue is : " + issue);
-			System.out.println("Your reference id is : " + refId);
+		public String getService() {
+			return "welcome to "+ department+ " "+customerName+ " How may i assist you with your payment inquiry";
 		}
 
 		public void setCustomerName(String name) {
@@ -33,14 +23,19 @@
 		}
 
 		public void setProblem(String problem) {
-			this.issue = problem;
+			this.problem = problem;
 		}
 
 		@Override
 		public String getProblem() {
-			return "Dear " + customerName + ", your issue is registered with " + getDepartment();
+			return "Dear "+customerName+ " Your issue for " + problem + " has been recorded , your reference id is "+ refId ;
 		}
 		
+		public double getRefId() {
+			return refId;
+		}
 
-
+		public String getCustomerName() {
+			return customerName;
+		}
 	}
