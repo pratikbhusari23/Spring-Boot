@@ -11,7 +11,7 @@ public interface CustomerCare {
 	
 	public void setProblem(String problem); 
 	
-	public String getProblem(); 
+	public void getProblem(); 
 
 	public double getRefId();
 

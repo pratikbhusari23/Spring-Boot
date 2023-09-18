@@ -15,7 +15,7 @@ public class SalesDepartment implements CustomerCare {
 	}
 
 	public String getService() {
-		return "welcome to "+ department+ " "+customerName+ " How may i assist you with your payment inquiry";
+		return "welcome to "+ department+ " " +customerName+ " How may i assist you with your payment inquiry";
 	}
 
 	public void setCustomerName(String name) {
@@ -27,8 +27,8 @@ public class SalesDepartment implements CustomerCare {
 	}
 
 	@Override
-	public String getProblem() {
-		return "Dear "+customerName+ " Your issue for " + problem + " has been recorded , your reference id is "+ refId ;
+	public void getProblem() {
+		System.out.println("Dear "+customerName+ " Your issue for " + problem + " has been recorded , your reference id is "+ refId) ;
 	}
 	
 	public double getRefId() {

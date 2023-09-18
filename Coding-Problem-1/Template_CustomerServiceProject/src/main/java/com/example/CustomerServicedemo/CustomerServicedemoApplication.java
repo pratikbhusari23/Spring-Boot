@@ -68,7 +68,7 @@ public class CustomerServicedemoApplication {
 		String problem = sc.nextLine();
 		customerCare.setProblem(problem);
 		
-		System.out.println(customerCare.getProblem());
+		customerCare.getProblem();
 		context.close();
 		sc.close();
 

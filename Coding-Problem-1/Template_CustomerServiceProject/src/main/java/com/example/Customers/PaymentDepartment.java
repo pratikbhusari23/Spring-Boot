@@ -16,7 +16,7 @@ public class PaymentDepartment implements CustomerCare {
 
     public String getService() {
         
-        return "welcome to "+ department+ " "+customerName+ " How may i assist you with your payment inquiry";
+        return "welcome to "+ department+ " " +customerName+ " How may i assist you with your payment inquiry";
     }
 
     public void setCustomerName(String name) {
@@ -30,9 +30,9 @@ public class PaymentDepartment implements CustomerCare {
         this.problem = problem;
     }
 
-    public String getProblem() {
+    public void getProblem() {
         
-        return "Dear "+customerName+ " Your issue for " + problem + " has been recorded , your reference id is:"+ refId ;
+        System.out.println("Dear "+customerName+ " Your issue for " + problem + " has been recorded , your reference id is:"+ refId );
         
     }
 
