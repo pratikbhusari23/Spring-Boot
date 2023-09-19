@@ -6,6 +6,12 @@ public class SportsCar implements Car{
     private String ownerName;
     Tyre tyre;
 
+    public SportsCar(){
+        
+    }
+    public void setTyre(Tyre tyre){
+        this.tyre = tyre;
+    }
     public SportsCar(Tyre tyre){
         this.tyre = tyre;
     }

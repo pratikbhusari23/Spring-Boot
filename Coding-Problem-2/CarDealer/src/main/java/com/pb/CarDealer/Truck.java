@@ -5,10 +5,16 @@ public class Truck implements Car {
     private String ownerName;
     Tyre tyre;
 
+    public Truck(){
+        
+    }
+    public void setTyre(Tyre tyre){
+        this.tyre = tyre;
+    }
     public Truck(Tyre tyre){
         this.tyre = tyre;
     }
-
+    
     public String getinfo(){
         return "truck"+ " " + tyre.getTyreInfo();
     }

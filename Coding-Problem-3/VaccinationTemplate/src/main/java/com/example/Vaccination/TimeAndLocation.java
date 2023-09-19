@@ -32,4 +32,5 @@ c. String date
     public String getDate() {
         return date;
     }
+    
 }

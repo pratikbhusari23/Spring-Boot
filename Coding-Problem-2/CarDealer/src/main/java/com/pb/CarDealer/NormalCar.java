@@ -5,6 +5,12 @@ public class NormalCar implements Car{
     private String ownerName;
     Tyre tyre;
 
+    public NormalCar(){
+        
+    }
+    public void setTyre(Tyre tyre){
+        this.tyre = tyre;
+    }
     public NormalCar(Tyre tyre){
         this.tyre = tyre;
     }

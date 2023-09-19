@@ -11,33 +11,33 @@
     <bean id= "HeavyTyre" class="com.pb.CarDealer.HeavyTyre"></bean>
 
     <bean id= "NormalCarNormalTyre" class="com.pb.CarDealer.NormalCar">
-        <constructor-arg ref="NormalTyre"></constructor-arg>
+        <property name="tyre" ref="NormalTyre"></property>
     </bean>
     <bean id= "NormalCarSportsTyre" class="com.pb.CarDealer.NormalCar">
-        <constructor-arg ref="SportsTyre"></constructor-arg>
+        <property name="tyre" ref="SportsTyre"></property>
     </bean>
     <bean id= "NormalCarHeavyTyre" class="com.pb.CarDealer.NormalCar">
-        <constructor-arg ref="HeavyTyre"></constructor-arg>
+        <property name="tyre" ref="HeavyTyre"></property>
     </bean>
 
     <bean id= "SportsCarNormalTyre" class="com.pb.CarDealer.SportsCar">
-        <constructor-arg ref="NormalTyre"></constructor-arg>
+        <property name="tyre" ref="NormalTyre"></property>
     </bean>
     <bean id= "SportsCarSportsTyre" class="com.pb.CarDealer.SportsCar">
-        <constructor-arg ref="SportsTyre"></constructor-arg>
+        <property name="tyre" ref="SportsTyre"></property>
     </bean>
     <bean id= "SportsCarHeavyTyre" class="com.pb.CarDealer.SportsCar">
-        <constructor-arg ref="HeavyTyre"></constructor-arg>
+        <property name="tyre" ref="HeavyTyre"></property>
     </bean>
 
     <bean id= "TruckNormalTyre" class="com.pb.CarDealer.Truck">
-        <constructor-arg ref="NormalTyre"></constructor-arg>
+        <property name="tyre" ref="NormalTyre"></property>
     </bean>
     <bean id= "TruckSportsTyre" class="com.pb.CarDealer.Truck">
-        <constructor-arg ref="SportsTyre"></constructor-arg>
+        <property name="tyre" ref="SportsTyre"></property>
     </bean>
     <bean id= "TruckHeavyTyre" class="com.pb.CarDealer.Truck">
-        <constructor-arg ref="HeavyTyre"></constructor-arg>
+        <property name="tyre" ref="HeavyTyre"></property>
     </bean>
 
 </beans>

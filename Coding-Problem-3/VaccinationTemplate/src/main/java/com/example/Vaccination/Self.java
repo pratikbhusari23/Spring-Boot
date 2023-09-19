@@ -8,9 +8,14 @@ public class Self implements User {
     private int age;
     private TimeAndLocation timeAndLocation;
     private String appointment;
+    private boolean isVaccinated;
 
     Vaccine vaccine ;
 
+    public Self(Vaccine vaccine , TimeAndLocation timeAndLocation) {
+        this.vaccine = vaccine;
+        this.timeAndLocation = timeAndLocation;
+    }
     public Vaccine getVaccineDetails() {
         return vaccine;
     }
@@ -21,11 +26,12 @@ public class Self implements User {
         this.timeAndLocation = timeAndLocation;
     }
 
-    public void setAppointment(String appointment) {
-        this.appointment = appointment;
+    public void setAppointment() {
+        System.out.println("Hello "+name+" your appointement has been fixed for "+getVaccineDetails()+ " on "+timeAndLocation.getTimeSlot()+ " at "+timeAndLocation.getLocation()+ "on "+timeAndLocation.getDate());
+        this.isVaccinated = true;
     }
 
     public boolean IsVaccinated() {
-        return true;
+        return isVaccinated;
     }
 }
