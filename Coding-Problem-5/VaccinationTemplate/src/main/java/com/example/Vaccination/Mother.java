@@ -12,6 +12,15 @@ public class Mother implements User {
 
     Vaccine vaccine ;
 
+    public Mother() {
+    }
+    public void setVaccine(Vaccine vaccine) {
+        this.vaccine = vaccine;
+    }
+
+    public void setTimeAndLocation(TimeAndLocation timeAndLocation) {
+        this.timeAndLocation = timeAndLocation;
+    }
     public Mother(TimeAndLocation timeAndLocation , Vaccine vaccine) {
         this.vaccine = vaccine;
         this.timeAndLocation = timeAndLocation;

@@ -13,7 +13,7 @@ public class Spouse implements User {
 
     Vaccine vaccine ;
 
-    public Spouse(Vaccine vaccine, TimeAndLocation timeAndLocation) {
+    public Spouse(TimeAndLocation timeAndLocation, Vaccine vaccine) {
         this.vaccine = vaccine;
         this.timeAndLocation = timeAndLocation;
     }
@@ -28,7 +28,7 @@ public class Spouse implements User {
     }
 
     public void setAppointment() {
-        System.out.println("Hello "+name+" your appointement has been fixed for "+getVaccineDetails()+ " on "+timeAndLocation.getTimeSlot()+ " at "+timeAndLocation.getLocation()+ "on "+timeAndLocation.getDate());
+        System.out.println("Hello "+name+" your appointement has been fixed for "+getVaccineDetails()+ " on "+timeAndLocation.getDetails());
         this.isVaccinated = true;
     }
 

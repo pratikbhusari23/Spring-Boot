@@ -2,7 +2,7 @@ package com.example.Vaccination;
 
 import com.example.Vaccination.User;
 
-public class Mother implements User {
+public class Self implements User {
 
     public String name;
     private int age;
@@ -12,7 +12,15 @@ public class Mother implements User {
 
     Vaccine vaccine ;
 
-    public Mother(TimeAndLocation timeAndLocation , Vaccine vaccine) {
+    public Self() {
+    }
+    public void setVaccine(Vaccine vaccine) {
+        this.vaccine = vaccine;
+    }
+    public void setTimeAndLocation(TimeAndLocation timeAndLocation) {
+        this.timeAndLocation = timeAndLocation;
+    }
+    public Self(TimeAndLocation timeAndLocation, Vaccine vaccine) {
         this.vaccine = vaccine;
         this.timeAndLocation = timeAndLocation;
     }

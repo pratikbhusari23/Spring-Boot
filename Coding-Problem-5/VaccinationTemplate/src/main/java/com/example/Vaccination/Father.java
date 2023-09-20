@@ -26,6 +26,16 @@ public class Father implements User {
 
     Vaccine vaccine ;
 
+    public Father() {
+    }
+    public void setVaccine(Vaccine vaccine) {
+        this.vaccine = vaccine;
+    }
+
+    public void setTimeAndLocation(TimeAndLocation timeAndLocation) {
+        this.timeAndLocation = timeAndLocation;
+    }
+
     public Father(TimeAndLocation timeAndLocation , Vaccine vaccine) {
         this.vaccine = vaccine;
         this.timeAndLocation = timeAndLocation;
