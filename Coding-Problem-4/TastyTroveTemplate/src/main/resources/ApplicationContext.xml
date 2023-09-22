@@ -31,35 +31,35 @@
     d. The file is located in "src>main>resources".
     -->
 
-    <bean id="chinese" class="com.example.TastyTrove.Chinese"></bean>
-    <bean id="northIndian" class="com.example.TastyTrove.NorthIndian"></bean>
-    <bean id="southIndian" class="com.example.TastyTrove.SouthIndian"></bean>
+    <bean id="lentils" class="com.example.TastyTrove.Lentils"></bean>
+    <bean id="rice" class="com.example.TastyTrove.Rice"></bean>
+    <bean id="wheat" class="com.example.TastyTrove.Wheat"></bean>
     
     <bean id= "chineseLentils" class="com.example.TastyTrove.Chinese"> 
-        <property name="ingredients" ref="chinese"></property>
+        <property name="ingredients" ref="lentils"></property>
     </bean>
     <bean id= "chineseRice" class="com.example.TastyTrove.Chinese"> 
-        <property name="ingredients" ref="chinese"></property>
+        <property name="ingredients" ref="rice"></property>
     </bean>
     <bean id= "chineseWheat" class="com.example.TastyTrove.Chinese"> 
-        <property name="ingredients" ref="chinese"></property>
+        <property name="ingredients" ref="wheat"></property>
     </bean>
     <bean id= "northIndianLentils" class="com.example.TastyTrove.NorthIndian"> 
-        <property name="ingredients" ref="northIndian"></property>
+        <property name="ingredients" ref="lentils"></property>
     </bean>
     <bean id= "northIndianRice" class="com.example.TastyTrove.NorthIndian"> 
-        <property name="ingredients" ref="northIndian"></property>
+        <property name="ingredients" ref="rice"></property>
     </bean>
     <bean id= "northIndianWheat" class="com.example.TastyTrove.NorthIndian"> 
-        <property name="ingredients" ref="northIndian"></property>
+        <property name="ingredients" ref="wheat"></property>
     </bean>
     <bean id= "southIndianLentils" class="com.example.TastyTrove.SouthIndian"> 
-        <property name="ingredients" ref="southIndian"></property>
+        <property name="ingredients" ref="lentils"></property>
     </bean>
     <bean id= "southIndianRice" class="com.example.TastyTrove.SouthIndian"> 
-        <property name="ingredients" ref="southIndian"></property>
+        <property name="ingredients" ref="rice"></property>
     </bean>
     <bean id= "southIndianWheat" class="com.example.TastyTrove.SouthIndian"> 
-        <property name="ingredients" ref="southIndian"></property>
+        <property name="ingredients" ref="wheat"></property>
     </bean>
 </beans>
