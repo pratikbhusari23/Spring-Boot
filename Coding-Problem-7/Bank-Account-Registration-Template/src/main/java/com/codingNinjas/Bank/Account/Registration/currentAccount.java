@@ -11,12 +11,10 @@ import java.util.List;
 public class currentAccount implements Account{
 
     private double balance;
+//    private String accountType;
 
-    public void init(){
-        System.out.println("Current Account Bean has been created and I'm the init method");
-    }
     public String getAccountType(){
-
+//        return this.accountType;
         return "Current";
     }
 
