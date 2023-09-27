@@ -2,7 +2,10 @@ package com.codingNinjas.Bank.Account.Registration;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.fasterxml.jackson.databind.introspect.Annotated;
 
 import java.util.Scanner;
 
@@ -20,17 +23,17 @@ public class BankAccountRegistrationApplication {
 
 	
 
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext("com.codingNinjas.Bank.Account.Registration");
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.println("Walcome to Account Registration Application! Please enter Your name?");
+		System.out.println("Welcome to Account Registration Application! Please enter Your name?");
 		String name = scanner.nextLine();
 
 		System.out.println("Do you want to add account type? 1. Yes 2. No");
 		int choice = scanner.nextInt();
 
 
-		User user = (User) context.getBean("myUser");
+		User user = context.getBean(User.class);
 		user.setUserDetails(name);
 
 		while(choice == 1){

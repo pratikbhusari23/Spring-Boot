@@ -1,6 +1,11 @@
 package com.codingNinjas.Bank.Account.Registration;
 
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 
 
@@ -9,12 +14,21 @@ import java.util.ArrayList;
  * 2. Override all the interface methods.
  * 3. Implement setter injection
  */
-
+@Component("myUser")
 public class myUser implements User{
 
     private String name;
+
     Account account;
     private List<Account> accounts;
+
+    @Autowired
+    @Qualifier("savingsAccount")
+    Account savingsAccount;
+
+    @Autowired
+    @Qualifier("currentAccount")
+    Account currentAccount;
 
     public myUser(){
         accounts=new ArrayList<>();
@@ -33,6 +47,15 @@ public class myUser implements User{
 
     public String getName(){
         return name;
+    }
+
+    public void setAccount(Account account){
+        if(account.equals("savingsAccount")){
+            this.account=savingsAccount;
+        }
+        else{
+            this.account=currentAccount;
+        }
     }
 
 }

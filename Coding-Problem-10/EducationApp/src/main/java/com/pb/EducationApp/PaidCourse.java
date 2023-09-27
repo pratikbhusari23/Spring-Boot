@@ -2,9 +2,11 @@ package com.pb.EducationApp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("paidCourse")
+@Scope("prototype")
 public class PaidCourse implements Course{
 	
 	String courseName;
@@ -48,10 +50,10 @@ public class PaidCourse implements Course{
 	}
 	public void setCourseInstructor(String instructorName) {
 		if(instructorName.equals("javaInstructor")) {
-			this.courseInstructor = javaInstructor;
+			this.courseInstructor = this.javaInstructor;
 		}
 		else if(instructorName.equals("springInstructor")) {
-			this.courseInstructor = springInstructor;
+			this.courseInstructor = this.springInstructor;
 		}
 	}
 }

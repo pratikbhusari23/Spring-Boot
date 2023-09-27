@@ -2,6 +2,9 @@ package com.pb.EducationApp;
 
 import org.springframework.stereotype.Component;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+
 @Component("javaInstructor")
 public class JavaInstructor implements Instructor {
 
@@ -19,11 +22,11 @@ public class JavaInstructor implements Instructor {
 		return "Hi my name is "+this.name+" and I will be your java"
 				+ "instructor";
 	}
-	
+	@PostConstruct
 	public void init() {
 		System.out.println("Java instructor bean created");
 	}
-	
+	@PreDestroy
 	public void cleanup() {
 		System.out.println("Java instructor bean about to be destroyed");
 	}

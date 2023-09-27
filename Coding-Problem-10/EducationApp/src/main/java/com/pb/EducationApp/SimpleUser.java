@@ -3,7 +3,7 @@ package com.pb.EducationApp;
 import org.springframework.stereotype.Component;
 import org.springframework.context.annotation.Scope;
 
-@Component
+@Component("simpleUser")
 @Scope("prototype")
 public class SimpleUser implements User {
 
