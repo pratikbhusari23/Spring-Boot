@@ -103,7 +103,9 @@ public class TastyTroveApplication {
         myRecipe.getDetails();
         context.close();
         scanner.close();
-	}
-	
+
+    
+    }
+
 }
 
