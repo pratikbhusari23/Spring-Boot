@@ -9,6 +9,6 @@
     <h1>Welcome</h1>
     <p>Thank you for signing up for the KIA India Car Service Registration application.</p>
     <p>Please sign up to access the KIA India Car Service Registration application.</p>
-    <a href="/register">Sign Up</a>
+    <a href="register">Sign Up</a>
 </body>
 </html>
