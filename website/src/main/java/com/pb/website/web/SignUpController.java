@@ -55,7 +55,7 @@ public class SignUpController {
         // Creating Instructors using HashMap
 
         HashMap<String,Object> instructors = new HashMap<String,Object>();
-        instructors.put("name", "Rahul");
+        instructors.put("name", "Rahul Mohan");
         instructors.put("Age", 23);
         instructors.put("id", 123);
 
