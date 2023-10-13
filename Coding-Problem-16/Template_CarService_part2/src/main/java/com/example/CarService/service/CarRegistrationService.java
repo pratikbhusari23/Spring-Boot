@@ -1,6 +1,9 @@
 package com.example.CarService.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.example.CarService.domain.Vehicle;
 
 /**
 
@@ -10,6 +13,23 @@ import org.springframework.stereotype.Service;
 **/
 
 @Service
-public class CarRegistrationService {
+public class CarRegistrationService implements Registration{
 
+    @Autowired
+    Vehicle vehicle;
+
+    @Override
+    public Boolean registerCar(String vehicleNo, String vehicleName, String CarDetails, String CarWork) {
+        
+        vehicle.createVehicle(vehicleNo, vehicleName, CarDetails, CarWork);
+        return vehicle.saveVehicleDetails();
+    }
+
+    @Override
+    public Vehicle getNewCar() {
+        
+        return vehicle;
+    }
 }
+
+

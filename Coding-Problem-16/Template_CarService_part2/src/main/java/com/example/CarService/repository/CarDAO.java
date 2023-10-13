@@ -10,8 +10,18 @@ import java.util.List;
  2. Implement the interface DAO and override the method save() in CarDAO.
 */
 @Repository
-public class CarDAO {
+public class CarDAO implements DAO<Car>{
     private List<Car> carList= new ArrayList<>();
 
+    @Override
+    public int save(Car car) {
+        
+        int carId=carList.size();
+        car.setCarId(carId);
+        carList.add( car);
+        System.out.println("saved Details");
+        return carId;
+        
+    }
 
 }

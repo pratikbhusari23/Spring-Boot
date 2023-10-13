@@ -1,6 +1,9 @@
 package com.example.CarService.domain;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import com.example.CarService.repository.DAO;
 
 /**
  1. Autowire dao and use the save method in saveVehicleDetails() function.
@@ -8,6 +11,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Car implements Vehicle{
+
+    @Autowired
+    DAO<Car> carDao;
+
     String RegisterationNumber;
     String CarName;
     String CarDetails;
@@ -57,8 +64,14 @@ public class Car implements Vehicle{
 
     @Override
     public Boolean saveVehicleDetails() {
-       System.out.println("saved");
-        return true;
+
+        if(RegisterationNumber!=null && CarName!=null && CarDetails!=null){
+            
+            System.out.println("new car added"+this.CarName + " "+this.RegisterationNumber+" "+this.CarDetails);
+            return true;
+        }else{
+            return false;
+        }
     }
 
     @Override

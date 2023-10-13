@@ -28,9 +28,9 @@ public class Lentils implements Ingredients {
     }
 
     public void setIngredient(String ingredient){
-        this.isChinese = ingredient.equalsIgnoreCase("chinese");
-        this.isNorthIndian = ingredient.equalsIgnoreCase("northIndian");
-        this.isSouthIndian = ingredient.equalsIgnoreCase("southIndian");
+        this.isChinese = ingredient.equals("chinese");
+        this.isNorthIndian = ingredient.equals("northIndian");
+        this.isSouthIndian = ingredient.equals("southIndian");
     }
 
     public String getDishDetail() {

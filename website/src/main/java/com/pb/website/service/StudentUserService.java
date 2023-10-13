@@ -19,10 +19,11 @@ public class StudentUserService implements UserService{
 
         boolean isStudentCreated= studentUser.createUser(name, gender, location, college);
         
-        if(isStudentCreated)
+        if(isStudentCreated){
             return studentUser.getUserId();
-        else
+        }else{
             return -1;
+        }
 
         // studentUser.getUserId();
         // return isStudentCreated;

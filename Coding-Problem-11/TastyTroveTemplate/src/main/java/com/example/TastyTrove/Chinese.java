@@ -35,6 +35,7 @@ public class Chinese implements Recipe {
     public Chinese(){
 
     }
+    
     public void getDetails() {
         System.out.println("Hello user " + userName + " we suggest you to make " + ingredients.getDishDetail() + " you can use the following ingredients:");
 
