@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import railway.com.example.RailwayAndMeal.Entity.Ticket;
+import railway.com.example.RailwayAndMeal.exceptions.TicketAlreadyExistsException;
+import railway.com.example.RailwayAndMeal.exceptions.TicketNotFoundException;
 import railway.com.example.RailwayAndMeal.service.RailwayService;
 
 @RestController
@@ -27,6 +29,7 @@ public class controller {
 	
 	@PostMapping("/ticket")
 	public void addTicket(@RequestBody Ticket ticket) {
+	
 		railwayservice.addTicket(ticket);
 	}
 	
@@ -38,16 +41,21 @@ public class controller {
 	
 	@GetMapping("/ticket/{pnr}")
 	public Ticket getTicketByPnr(@PathVariable long pnr) {
+
+
 		return railwayservice.getTicketByPnr(pnr);
 	}
 	
 	@DeleteMapping("/ticket/{pnr}")
 	public void deleteTicket(@PathVariable long pnr) {
+
 		railwayservice.deleteTicketByPnr(pnr);
 	}
 	
 	@PutMapping("/ticket")
 	public void updateTicket(@RequestBody Ticket ticket) {
+
+		
 		railwayservice.updateTicket(ticket);
 	}
 

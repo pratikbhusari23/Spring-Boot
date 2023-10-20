@@ -1,10 +1,15 @@
 package railway.com.example.RailwayAndMeal.Entity;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Size;
+
 public class Ticket {
 
 	//add annotation for restricting the pnr to have a minimun value of 1
+	@Min(1)
 	public long pnr;
 	//add annotation for name to have a minimum of 3 and maximum of 20 length of characters.
+	@Size(min=3, max=20)
 	public String name;
 	public long age;
 	public String birth;

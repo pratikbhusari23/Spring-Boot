@@ -27,7 +27,7 @@ public class RailwayService {
 	}
 
 	public void addTicket(Ticket ticket) {
-		if (ObjectUtils.isEmpty(ticketMap.get(ticket.getPnr())))
+		if (!ObjectUtils.isEmpty(ticketMap.get(ticket.getPnr())))
 			throw new TicketAlreadyExistsException("Ticket with id : "+ticket.getPnr()+" already exists");
 		list.add(ticket);
 		ticketMap.put(ticket.getPnr(), ticket);
@@ -45,7 +45,7 @@ public class RailwayService {
 
 	public void updateTicket(Ticket ticket) {
 		Ticket existing_ticket = this.getTicketByPnr(ticket.getPnr());
-	long pnr=ticket.getPnr();
+		long pnr=ticket.getPnr();
 		list.remove(existing_ticket);
 		ticketMap.remove(existing_ticket.getPnr());
 		list.add(ticket);

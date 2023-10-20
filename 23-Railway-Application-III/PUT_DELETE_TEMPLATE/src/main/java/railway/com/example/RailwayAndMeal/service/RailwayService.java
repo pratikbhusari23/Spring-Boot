@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 
 import railway.com.example.RailwayAndMeal.Entity.Ticket;
+import railway.com.example.RailwayAndMeal.exceptions.TicketAlreadyExistsException;
+import railway.com.example.RailwayAndMeal.exceptions.TicketNotFoundException;
 
 @Service
 public class RailwayService {
@@ -21,10 +23,18 @@ public class RailwayService {
 	public Map<Long,Ticket> ticketMap = new HashMap<>();
 
 	public Ticket getTicketByPnr(long pnr) {
+		if(ObjectUtils.isEmpty(ticketMap.get(pnr))){
+			throw new TicketNotFoundException("No ticket found with pnr : "+ pnr);
+		}
 		return ticketMap.get(pnr);
 	}
 	
 	public void addTicket(Ticket ticket) {
+		
+		if(!ObjectUtils.isEmpty(ticketMap.get(ticket.getPnr()))){
+			throw new TicketAlreadyExistsException("Ticket with id : "+ ticket.getPnr() + " already exists");
+		}
+		
 		list.add(ticket);
 		ticketMap.put(ticket.getPnr(), ticket);	
 	}
@@ -34,6 +44,10 @@ public class RailwayService {
 	}
 	
 	public void deleteTicketByPnr(long pnr) {
+
+		if(ObjectUtils.isEmpty(ticketMap.get(pnr))){
+			throw new TicketNotFoundException("No ticket found with pnr : "+ pnr);
+		}
 		Ticket ticket = this.getTicketByPnr(pnr);
 		
 		list.remove(ticket);
@@ -41,10 +55,16 @@ public class RailwayService {
 	}
 	
 	public void updateTicket(Ticket ticket) {
-		Ticket existing_ticket = this.getTicketByPnr(ticket.getPnr());
+
+		if(ObjectUtils.isEmpty(ticketMap.get(ticket.getPnr()))){
+			throw new TicketNotFoundException("No ticket found with pnr : "+ ticket.getPnr());
+		}
+
 		
-		list.remove(existing_ticket);
-		ticketMap.remove(existing_ticket.getPnr());
+		Ticket existingTicket = getTicketByPnr(ticket.getPnr());
+		
+		list.remove(existingTicket);
+		ticketMap.remove(existingTicket.getPnr());
 		
 		list.add(ticket);
 		ticketMap.put(ticket.getPnr(), ticket);

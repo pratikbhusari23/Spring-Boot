@@ -5,9 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.RequestBody;
+
+import com.pb.hotel.communicator.RatingServiceCommunicator;
 
 import com.pb.hotel.exceptions.hotelnotfoundexception;
 import com.pb.hotel.model.Hotel;
@@ -18,9 +21,19 @@ public class HotelService {
     List<Hotel> hotelList=new ArrayList<>();
     Map<String,Hotel> hotelMap = new HashMap<>();
 
+    @Autowired
+    RatingServiceCommunicator ratingServiceCommunicator;
+
     public void createHotel(Hotel hotel){
+
+        Map<String,Long> ratingMap = new HashMap<>();
+        
         hotelList.add(hotel);
         hotelMap.put(hotel.getId(), hotel);
+
+        ratingMap.put(hotel.getId(),hotel.getRating());
+        ratingServiceCommunicator.addRating(ratingMap);
+
     }
 
     public Hotel getHotelById(String id){
@@ -28,7 +41,14 @@ public class HotelService {
         if(ObjectUtils.isEmpty(hotelMap.get(id))){
             throw new hotelnotfoundexception("Hotel Not Found for id :"+id);
         }
-        return hotelMap.get(id);
+
+        Hotel hotel = hotelMap.get(id);
+
+       long updatedRating = ratingServiceCommunicator.getRating(id);
+       hotel.setRating(updatedRating);
+        return hotel;
+
+
     }
 
     public List<Hotel> getAllHotels() {

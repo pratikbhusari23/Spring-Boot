@@ -7,6 +7,9 @@ public class Ticket {
 	public long age;
 	public String birth;
 	
+	public Ticket(){
+
+	}
 	public Ticket(String name, long age, long pnr, String birth) {
 		super();
 		this.pnr = pnr;
