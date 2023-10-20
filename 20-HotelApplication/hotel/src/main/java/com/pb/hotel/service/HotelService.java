@@ -44,11 +44,11 @@ public class HotelService {
 
         Hotel hotel = hotelMap.get(id);
 
-       long updatedRating = ratingServiceCommunicator.getRating(id);
-       hotel.setRating(updatedRating);
+        long updatedRating = ratingServiceCommunicator.getRating(id);
+        hotel.setRating(updatedRating);
         return hotel;
-
-
+        
+         
     }
 
     public List<Hotel> getAllHotels() {
