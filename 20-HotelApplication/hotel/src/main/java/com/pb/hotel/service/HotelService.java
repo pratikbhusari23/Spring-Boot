@@ -61,6 +61,8 @@ public class HotelService {
         Hotel hotel = getHotelById(id);
         hotelList.remove(hotel);
         hotelMap.remove(id);
+
+        ratingServiceCommunicator.deleteRating(id);
     }
 
     public void update(Hotel updatedHotel) {
@@ -69,12 +71,17 @@ public class HotelService {
         // add the updated data
 
         Hotel existingHotel = getHotelById(updatedHotel.getId());
+
         hotelList.remove(existingHotel);
         hotelList.add(updatedHotel);
         // Update the previous data with the new data
         // Update the map with new data
 
         hotelMap.put(updatedHotel.getId(), updatedHotel);
+
+        Map<String,Long> updatedRating = new HashMap<>();
+        updatedRating.put(updatedHotel.getId(), updatedHotel.getRating());
+        ratingServiceCommunicator.updateRating(updatedRating);
 
     }
 

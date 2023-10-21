@@ -23,7 +23,10 @@ public class RatingServiceCommunicator {
     public long getRating(String id){
         String url="http://localhost:8081/rating/id/";
 
-        ResponseEntity<Long> response = restTemplate.getForEntity(url+id, Long.class);
+        //ResponseEntity<Long> response = restTemplate.getForEntity(url+id, Long.class);
+
+        HttpEntity requestEntity = new HttpEntity(id);
+        ResponseEntity<Long> response = restTemplate.exchange(url+id, HttpMethod.GET, requestEntity, Long.class);
 
         return response.getBody();
     
@@ -32,12 +35,27 @@ public class RatingServiceCommunicator {
     public void addRating(Map<String,Long> ratingMap) {
 
         String url="http://localhost:8081/rating/add";
-        restTemplate.postForObject(url, ratingMap, Object.class);
+        // restTemplate.postForObject(url, ratingMap, Object.class);
 
         
-        // HttpEntity requestEntity = new HttpEntity(ratingMap); 
-        // restTemplate.exchange(url , HttpMethod.POST, requestEntity, Object.class);
+        HttpEntity requestEntity = new HttpEntity(ratingMap); 
+        restTemplate.exchange(url , HttpMethod.POST, requestEntity, Object.class);
     }
 
+    public void updateRating(Map<String,Long> ratingMap) {
+
+        String url="http://localhost:8081/rating/update";
+        
+        HttpEntity requestEntity = new HttpEntity(ratingMap);
+        restTemplate.exchange(url , HttpMethod.PUT, requestEntity, Object.class);
+        
+    }
+
+    public void deleteRating(String id){
+
+        String url = "http://localhost:8081/rating/id/";
+
+        restTemplate.exchange(url+id, HttpMethod.DELETE, null, Object.class);
+    }
 
 }
