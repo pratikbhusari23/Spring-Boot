@@ -1,10 +1,16 @@
 package com.pb.cheapKart.Entity;
 
+import java.util.List;      
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -22,6 +28,12 @@ public class Item {
     @Column
     private String description;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private itemDetails itemDetails;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="item_id")
+    private List<ItemReview> itemReview;
 
     public int getId() {
         return this.id;
@@ -41,6 +53,22 @@ public class Item {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public itemDetails getItemDetails() {
+        return this.itemDetails;
+    }
+
+    public void setItemDetails(itemDetails itemDetails) {
+        this.itemDetails = itemDetails;
+    }
+
+    public List<ItemReview> getItemReview() {
+        return this.itemReview;
+    }
+
+    public void setItemReview(List<ItemReview> itemReview) {
+        this.itemReview = itemReview;
     }
 
 }
