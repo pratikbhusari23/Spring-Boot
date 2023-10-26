@@ -1,10 +1,11 @@
 package com.pb.MovieTicketBooking.Model;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Size;
+
 import java.util.List;
 
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+
 
 
 public class movie {
@@ -22,7 +23,7 @@ public class movie {
 
 
     //@NotNull(message = "movierating cannot be null")
-    @Min(1)
+    @Min(value=1)
     private long movierating;
 
     //@NotNull(message = "movielanguage cannot be null")

@@ -43,11 +43,11 @@ public class controller {
     }
 
     @PostMapping("/movie")
-    public String addMovie(@Valid @RequestBody movie movie , BindingResult result){
+    public String addMovie(@Valid @RequestBody movie movie ){
 
-        if(result.hasErrors()){
-            throw new idAlreadyExist("id already exist");
-        }
+//        if(result.hasErrors()){
+//            throw new idAlreadyExist("id already exist");
+//        }
         return movieService.addMovie(movie);
     }
 
